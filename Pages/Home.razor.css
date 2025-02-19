@@ -1,0 +1,76 @@
+﻿
+
+.logosvg {
+    height: 50px;
+    width: auto;
+}
+
+
+.heropic {
+    height: 200px;
+    width: auto;
+}
+
+.hero {
+    display: flex;
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: white;
+    justify-content: space-between;
+    padding: 100px;
+    flex-direction: row;
+}
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h1:focus {
+    outline: none;
+}
+
+.aliados {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align:center;
+    padding: 25px 10px;
+    color: #007bff;
+}
+
+.aliados-imagenes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+    .aliados img {
+        height: auto;
+        max-width: 100%;
+        display: block;
+        max-height: 200px;
+    }
+.titulo {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: 700;
+    
+}
+
+
+.features {
+    margin: 40px 40px;
+}

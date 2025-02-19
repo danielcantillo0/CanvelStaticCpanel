@@ -1,0 +1,49 @@
+﻿.footer {
+  background-color: #333;      /* Dark background */
+  color: #fff;                 /* White text */
+  padding: 2rem 1rem;          /* Spacing around content */
+  display: flex;
+  flex-wrap: wrap;             /* Allow items to wrap on smaller screens */
+  justify-content: center;     /* Center items horizontally */
+  align-items: center;         /* Center items vertically */
+  gap: 2rem;                   /* Space between children */
+  text-align: center;
+}
+
+.footer > div {
+  flex: 1 1 auto;              /* Allow both children to grow/shrink as needed */
+}
+
+.footer-pic {
+  max-width: 150px;            /* Adjust the max width as needed */
+  width: 100%;
+  height: auto;
+}
+
+.footer-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: inherit;              /* Use the parent's color */
+  text-decoration: none;       /* Remove underline */
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ccc;                 /* Lighter shade on hover */
+}
+
+/* Optional: Adjust layout on very small screens */
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+

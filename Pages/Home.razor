@@ -1,0 +1,43 @@
+﻿@page "/"
+@using CanvelStaticCpanel.Layout
+@using CanvelStaticCpanel.Shared
+@layout MainLayout
+@inject NavigationManager NavigationManager
+
+<div class="hero">
+	<div class="container">
+		<h1>Impulsamos industrias críticas con equipos de alta especialización y soluciones integrales</h1>
+		<p>Nuestra experiencia combinada de más de 15 años en el sector respalda el suministro y soporte técnico de equipos críticos y especializados, así como la selección de proveedores confiables y de calidad.</p>
+		<MyButton ButtonText="Contáctanos" OnClick="@NavigateToContact"  />
+	</div>
+</div>
+
+
+
+<h1 class="titulo">Principales Aliados</h1>
+
+
+<div class="aliados">
+	<div class="aliados-imagenes">
+		<img src="Assets/09jcl_Aliado_manoil.png" alt="Manoil" />
+		<img src="Assets/kd2jk_Aliado_iocs.png" alt="Iocs" />
+		<img src="Assets/marit-01.png" alt="Marit" />
+		<img src="Assets/pjiq3_Aliado_constellation.png" alt="Constellation" />
+		<img src="Assets/yylwn_Aliado_irm.png" alt="IRM" />
+	</div>
+</div>
+
+
+
+<h1 class="titulo">Beneficios y Caracteristicas</h1>
+<img class="features" src="BottomGraphic.svg" alt="features graph" />
+
+
+
+@code {
+	private void NavigateToContact()
+	{
+		// This will navigate to the /contact route
+		NavigationManager.NavigateTo("/new/contact");
+	}
+}

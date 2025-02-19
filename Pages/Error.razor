@@ -1,0 +1,36 @@
+﻿@page "/Error"
+@using System.Diagnostics
+
+<PageTitle>Error</PageTitle>
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Switching to <strong>Development</strong> environment will display more detailed information about the error.
+</p>
+<p>
+    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
+    It can reveal sensitive error details. For local debugging, set the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>.
+</p>
+
+@code {
+    private string? RequestId { get; set; }
+    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    protected override void OnInitialized()
+    {
+        // HttpContext is not available in Blazor WebAssembly.
+        // Use Activity.Current or generate a new GUID for a unique request ID.
+        RequestId = Activity.Current?.Id ?? Guid.NewGuid().ToString();
+    }
+}
+

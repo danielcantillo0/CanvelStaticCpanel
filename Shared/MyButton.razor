@@ -1,0 +1,20 @@
+﻿<button @onclick="HandleClick" class="btn-primary">
+    @ButtonText
+</button>
+
+@code {
+    [Parameter]
+    public string ButtonText { get; set; } = "Default";
+
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+
+    private async Task HandleClick()
+    {
+        if (OnClick.HasDelegate)
+        {
+            await OnClick.InvokeAsync(null);
+        }
+    }
+}
+

@@ -1,0 +1,87 @@
+﻿/* Container for the Nosotros section */
+#nosotros {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: Raleway;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Main Title */
+#nosotros h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #007bff; /* Brand color, adjust as needed */
+}
+
+/* Paragraph styling */
+#nosotros p {
+  margin-bottom: 1rem;
+}
+
+/* Subtitles for sections */
+#nosotros h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Unordered list styling for "Principales Industrias" */
+#nosotros ul {
+  list-style: none;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#nosotros ul li {
+  position: relative;
+  padding-left: 40px; /* Add space for the logo */
+  margin-bottom: 0.5em;
+}
+
+#nosotros ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;  /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+  background: url('LogoCanvel.svg') no-repeat center center;
+  background-size: contain;
+}
+
+/* Valores y Principios section styled as a responsive grid */
+.valores-principios {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Styling for each value/principio */
+.valores-principios article {
+  display: flex;
+  flex-direction: row;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.valores-principios article img {
+    max-height: 150px;
+    margin: auto 25px;
+}
+
+/* Headings within each article */
+.valores-principios h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+  font-weight: 900;
+}

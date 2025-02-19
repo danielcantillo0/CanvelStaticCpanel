@@ -1,0 +1,52 @@
+/* General Styling */
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Define the variable weight range */
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: #333;
+    --color-1: #00a1bc;
+    --color-2: #03538e;
+    --color-3: #111d4a;
+    --space: 100px;
+    --gap: 50px;
+    --box-width: 535px;
+    --max-width: 1120px;
+    --gradient-1: linear-gradient(90deg,var(--color-3) 0%,var(--color-2) 25%,var(--color-1) 50%,var(--color-2) 75%,var(--color-3) 100%);
+    --gradient-2: linear-gradient(90deg,var(--color-3) 0%,var(--color-2) 25%,var(--color-3) 75%,var(--color-1) 100%);
+    --shadow-1: 5px 5px 15px rgba(0,0,0,.2);
+    --body-overflow: visible;
+    --radius: 12px;
+    font-family: Raleway,sans-serif;
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+/* NavLink Styles */
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+    .nav-link:hover,
+    .nav-link.active {
+        text-decoration: underline;
+    }
+
+
+
+
+
+
+
+
