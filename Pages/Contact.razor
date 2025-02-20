@@ -1,5 +1,6 @@
 ﻿@page "/contact"
 @using System.ComponentModel.DataAnnotations
+@inject HttpClient Http
 
 <PageTitle>Contact Us</PageTitle>
 <div class="contact-container">
@@ -30,10 +31,10 @@
         <button type="submit" class="btn btn-primary">Send</button>
     </EditForm>
 
-    @if (!string.IsNullOrEmpty(successMessage))
+    @if (!string.IsNullOrEmpty(resultMessage))
     {
         <div class="alert alert-success mt-3">
-            @successMessage
+            @resultMessage
         </div>
     }
 </div>
@@ -41,15 +42,25 @@
 
 @code {
     private ContactModel contactModel = new ContactModel();
-    private string? successMessage;
+    private string? resultMessage;
 
     private async Task HandleValidSubmit()
     {
-        // Simulate sending the contact message
-        await Task.Delay(500);
 
-        // Here you might send the contactModel data to an API endpoint using HttpClient, etc.
-        successMessage = "Thank you for your message. We'll get back to you shortly.";
+        string endpointURL = "https://canvelbackend20250219112918-czbtfafjcpf6ftgv.canadacentral-01.azurewebsites.net/api/SendEmail";
+        // Simulate sending the contact message
+        try
+        {
+            var response = await Http.PostAsJsonAsync(endpointURL, contactModel);
+            if (response.IsSuccessStatusCode)
+            {
+                resultMessage = "Thank you for your message. We'll get back to you shortly.";
+            }
+        }
+        catch (Exception ex)
+        {
+            resultMessage = $"An error has ocurred: {ex.Message}";
+        }
 
         // Reset the form
         contactModel = new ContactModel();
