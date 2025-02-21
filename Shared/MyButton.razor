@@ -1,10 +1,14 @@
-﻿<button @onclick="HandleClick" class="btn-primary">
-    @ButtonText
+﻿<button @onclick="HandleClick" class="@ButtonClass">
+    <span class="@SpanClass">@ButtonText</span>
 </button>
 
 @code {
     [Parameter]
-    public string ButtonText { get; set; } = "Default";
+    public string ButtonClass { get; set; } = "";
+    [Parameter]
+    public string ButtonText { get; set; } = "";
+    [Parameter]
+    public string SpanClass { get; set; } = "";
 
     [Parameter]
     public EventCallback OnClick { get; set; }

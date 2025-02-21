@@ -1,16 +1,16 @@
-﻿
-
+﻿/* Logo SVG */
 .logosvg {
     height: 50px;
     width: auto;
 }
 
-
+/* Hero Image */
 .heropic {
     height: 200px;
     width: auto;
 }
 
+/* Hero Section */
 .hero {
     display: flex;
     background: linear-gradient(to right, #007bff, #6610f2);
@@ -20,36 +20,38 @@
     flex-direction: row;
 }
 
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
+/* Hero Text Styles */
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
 
-    .hero p {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
 
-
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .container h1:focus {
     outline: none;
 }
 
+/* Aliados Section */
 .aliados {
     display: flex;
     flex-direction: column;
     background-color: white;
-    text-align:center;
+    text-align: center;
     padding: 25px 10px;
     color: #007bff;
 }
 
+/* Aliados Images Container */
 .aliados-imagenes {
     display: flex;
     justify-content: center;
@@ -57,20 +59,51 @@
     gap: 15px;
 }
 
-    .aliados img {
-        height: auto;
-        max-width: 100%;
-        display: block;
-        max-height: 200px;
-    }
+/* Aliados Images */
+.aliados img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+    max-height: 200px;
+}
+
+/* Title */
 .titulo {
     text-align: center;
     margin: 15px 0;
     font-weight: 700;
-    
 }
 
-
+/* Features Section */
 .features {
     margin: 40px 40px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;      /* Stack hero items vertically */
+        padding: 50px 20px;          /* Reduce padding on mobile */
+        text-align: center;          /* Center text for better readability */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;           /* Adjust font size for smaller screens */
+    }
+    
+    .hero p {
+        font-size: 1.2rem;           /* Adjust font size for mobile */
+    }
+    
+    .features {
+        margin: 20px 20px;           /* Reduce margins on mobile */
+    }
+    
+    .aliados-imagenes {      
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        align-items: center;
+    }
 }

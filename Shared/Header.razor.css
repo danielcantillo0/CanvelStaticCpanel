@@ -1,31 +1,116 @@
-﻿/* Header Styles */
+﻿/* File: Header.razor.css  */
+
+/* Header Styles */
 .header {
-    padding-top: 15px;
+  padding: 15px;
+  background: #007bff;
+  color: white;
+}
+
+/* Container: adjust layout based on screen size */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; /* Center container */
+  flex-direction: row; /* Default for larger screens */ /* Provide horizontal padding */
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 50px;
+  background: none;
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  top: 8px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: row; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 70%;
+    height: 100%;
     background: #007bff;
     color: white;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    flex-direction: column;
-}
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
+  .nav.open {
+    transform: translateX(0);
+  }
+  
+  .nav-menu {
+    flex-direction: column; /* Stack menu items */
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .nav-menu li {
+    margin: 10px 0; /* Increase vertical spacing */
+  }
+  
+  .logo {
+    margin-bottom: 10px; /* Space between logo and nav */
+  }
 }
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-    .nav-menu li {
-        margin: 0 15px;
-    }
 
