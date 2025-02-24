@@ -1,0 +1,33 @@
+﻿@page "/productos"
+@inject HttpClient Http
+@using CanvelStaticCpanel.Shared
+@using CanvelStaticCpanel.Data
+
+<section id="productos">
+    <h3>Nuestros Productos</h3>
+    <p>Nuestros productos abarcan una amplia gama de soluciones. A continuación, se presenta una visión general de los productos que ofrecemos</p>
+
+    @if (productos.products == null)
+    {
+        <p>Cargando productos...</p>
+    }
+    else if (!productos.products.Any())
+    {
+        <p>No se encontraron productos.</p>
+    }
+    else
+    {
+        <div class="productos-grid">
+            @foreach (var product in productos.products)
+            {
+                <ProductoItem ProductoName="@product.Name" ProductoImgUrl="@product.Url"/>
+            }
+        </div>
+    }
+</section>
+
+@code {
+    private ProductosData productos = new ProductosData();
+}
+
+
