@@ -24,10 +24,21 @@
             }
         </div>
     }
+
+    <h3 style="margin-top: 25px">Brochures</h3>
+	<p>Descargue nuestros brochures para obtener más información sobre nuestros productos.</p>
+    <div class="brochures-grid">
+        @foreach (var brochure in brochures.brochures)
+        {
+            <Brochure BrochureName="@brochure.Name" BrochureLink="@brochure.Url" />
+        }
+    </div>
+	
 </section>
 
 @code {
     private ProductosData productos = new ProductosData();
+	private BrochuresData brochures = new BrochuresData();
 }
 
 

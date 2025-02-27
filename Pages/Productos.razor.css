@@ -3,7 +3,7 @@
     padding: 2rem;
     background-color: #f9f9f9;
     color: #333;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Raleway, sans-serif;
 }
 
 /* Heading styles */
@@ -28,5 +28,36 @@
     gap: 1.5rem;
 }
 
+#productos .brochures-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: var(--gap);
+    column-gap: var(--gap);
+    flex-wrap: wrap;
+}
 
+@media (max-width: 600px) {
+    #productos {
+        padding: 1rem;
+    }
 
+    #productos h3 {
+        font-size: 1.5rem;
+    }
+
+    #productos p {
+        font-size: 0.9rem;
+    }
+
+    #productos .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #productos .brochures-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}

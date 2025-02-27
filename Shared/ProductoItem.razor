@@ -1,11 +1,20 @@
 ﻿<div class="producto-item">
-	<div class="producto-name">
-		<h3>@ProductoName</h3>
-	</div>
-	<div class="producto-img">
-		<img src="@ProductoImgUrl" alt="Imagen de un Producto" />
-	</div>
+	
+		<img src="@ProductoImgUrl" alt="Imagen de un Producto" @onclick="ShowModal"/>
+		<div class="producto-name">
+			<h3>@ProductoName</h3>
+		</div>
 </div>
+
+@if (IsModalVisible)
+{
+	<div class="modal-overlay" @onclick="HideModal">
+		<div class="modal-content" @onclick:stopPropagation="true">
+			<span class="close" @onclick="HideModal">&times;</span>
+			<img src="@ProductoImgUrl" alt="Full Size Image" class="full-image" />
+		</div>
+	</div>
+}
 
 
 @code {
@@ -13,6 +22,18 @@
 	public string ProductoName { get; set; }
 	[Parameter]
 	public string ProductoImgUrl { get; set; }
+
+	private bool IsModalVisible { get; set; }
+
+	private void HideModal()
+	{
+		IsModalVisible = false;
+	}
+
+	private void ShowModal()
+	{
+		IsModalVisible = true;
+	}
 
 
 }

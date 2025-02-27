@@ -1,0 +1,13 @@
+﻿<div class="brochure-item">
+	<a href=@BrochureLink class="no-style" target="_blank" rel="noopener noreferrer">
+		@BrochureName
+	</a>
+</div>
+
+@code {
+	[Parameter]
+	public string? BrochureName { get; set; }
+
+	[Parameter]
+	public string? BrochureLink { get; set; }
+}

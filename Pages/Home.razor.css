@@ -16,8 +16,12 @@
     background: linear-gradient(to right, #007bff, #6610f2);
     color: white;
     justify-content: space-between;
+    text-align: center;
+    align-items: center;
     padding: 100px;
     flex-direction: row;
+    height: calc(100vh - 240px);
+    width: auto;
 }
 
 /* Hero Text Styles */
@@ -34,7 +38,8 @@
 /* Container */
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
 
 .container h1:focus {
@@ -79,20 +84,27 @@
     margin: 40px 40px;
 }
 
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;      /* Stack hero items vertically */
-        padding: 50px 20px;          /* Reduce padding on mobile */
+        padding: 50px 50px;                  /* Reduce padding on mobile */
         text-align: center;          /* Center text for better readability */
+        width: auto;
+        justify-content: center;
     }
     
     .hero h1 {
-        font-size: 2.5rem;           /* Adjust font size for smaller screens */
+        font-size: 1.5rem;           /* Adjust font size for smaller screens */
     }
     
     .hero p {
-        font-size: 1.2rem;           /* Adjust font size for mobile */
+        font-size: 0.9rem;           /* Adjust font size for mobile */
+    }
+
+    .titulo {
+        font-size: 1.2rem;
     }
     
     .features {

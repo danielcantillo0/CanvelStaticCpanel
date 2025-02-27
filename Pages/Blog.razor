@@ -1,0 +1,66 @@
+﻿@page "/blog"
+
+<div class="blog-page">
+    <h3>Blog</h3>
+
+    @if (blogPosts == null)
+    {
+        <p><em>Loading posts...</em></p>
+    }
+    else
+    {
+        <div class="blog-container">
+            @foreach (var post in blogPosts)
+            {
+                <article class="blog-post">
+                    <h4>@post.Title</h4>
+                    <p>@post.Content</p>
+                    <small>Published: @post.PublishDate.ToShortDateString()</small>
+                </article>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    // A simple model for blog posts
+    public class BlogPost
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public DateTime PublishDate { get; set; }
+    }
+
+    // A collection to store blog posts
+    private List<BlogPost> blogPosts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate an asynchronous data fetch (e.g., from an API or database)
+        await Task.Delay(500); // Simulate network delay
+
+        // Initialize with sample posts
+        blogPosts = new List<BlogPost>
+        {
+            new BlogPost
+            {
+                Title = "Welcome to my Blog",
+                Content = "This is my first post! Stay tuned for more updates.",
+                PublishDate = DateTime.Now.AddDays(-2)
+            },
+            new BlogPost
+            {
+                Title = "Second Post",
+                Content = "Here's another interesting update on what I've been working on.",
+                PublishDate = DateTime.Now.AddDays(-1)
+            },
+            new BlogPost
+            {
+                Title = "Latest News",
+                Content = "Check out the latest news and updates on our journey!",
+                PublishDate = DateTime.Now
+            }
+        };
+    }
+}
+

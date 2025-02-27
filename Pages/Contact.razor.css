@@ -44,13 +44,13 @@ form {
 }
 
 /* Input/TextArea Elements */
-.form-control {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+::deep .input-canvel {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
@@ -100,12 +100,38 @@ form {
 /*----------------------------------------------------
   Responsive Adjustments
 -----------------------------------------------------*/
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .contact-container {
     padding: 1rem;
   }
   form {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  form {
+    padding: 1rem;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .alert {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+  ::deep .input-canvel {
+      width: 90%;
   }
 }
 

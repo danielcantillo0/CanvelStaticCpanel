@@ -5,6 +5,12 @@
   padding: 15px;
   background: #007bff;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header is above other content */
 }
 
 /* Container: adjust layout based on screen size */
@@ -15,14 +21,6 @@
   max-width: 1200px;
   margin: 0 auto; /* Center container */
   flex-direction: row; /* Default for larger screens */ /* Provide horizontal padding */
-}
-
-/* Logo Styles */
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
 }
 
 /* Hamburger Button */
@@ -70,7 +68,12 @@
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
+@media (max-width: 768px) {  
+
+  header {
+      max-height: 20px;
+  }  
+
   .header-container {
     flex-direction: row; /* Stack items vertically */
     align-items: center;
@@ -78,11 +81,20 @@
 
   .menu-toggle {
       display: block;
+      position: relative;
+      top: -17px;
+  }
+
+  .logo img {
+      height: 25px;
+      position: relative;
+      top: -13px;
+
   }
 
   .nav {
     position: fixed;
-    top: 90px;
+    top: 50px;
     left: 0;
     width: 70%;
     height: 100%;

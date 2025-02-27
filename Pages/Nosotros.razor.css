@@ -37,6 +37,11 @@
   margin-bottom: 1rem;
 }
 
+.principales-industrias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 #nosotros ul li {
   position: relative;
   padding-left: 40px; /* Add space for the logo */
@@ -84,4 +89,23 @@
   margin-bottom: 0.5rem;
   color: #007bff;
   font-weight: 900;
+}
+
+@media (max-width: 600px) {
+    .valores-principios article {
+        flex-direction: column;
+    }
+
+    .valores-principios article img {
+        margin: 0 auto 1rem;
+    }
+
+    .valores-principios article p {
+        font-size: 0.9rem;
+    }
+
+    #nosotros p {
+        font-size: 1rem;
+    }
+
 }
