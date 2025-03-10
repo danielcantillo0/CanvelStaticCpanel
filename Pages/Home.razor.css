@@ -12,19 +12,34 @@
 
 /* Hero Section */
 .hero {
+    position: relative;
     display: flex;
-    background: linear-gradient(to right, #007bff, #6610f2);
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-hormel-media-1095814.jpg?alt=media&token=b29d1f93-3577-47db-bd6b-d1fbc9b5a1d4");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color: white;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 100px;
+    padding: 0;
     flex-direction: row;
-    height: calc(100vh - 240px);
-    width: auto;
+    height: 100vh;
+    width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure the overlay is behind the text */
 }
 
 /* Hero Text Styles */
+
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 10px;
@@ -40,6 +55,7 @@
     max-width: 1200px;
     margin: 0;
     padding: 0;
+    z-index: 2;
 }
 
 .container h1:focus {
@@ -74,9 +90,11 @@
 
 /* Title */
 .titulo {
+    font-size: 1.25rem;
     text-align: center;
     margin: 15px 0;
-    font-weight: 700;
+    font-weight: 600;
+    color: black;
 }
 
 /* Features Section */
@@ -89,7 +107,7 @@
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;      /* Stack hero items vertically */
-        padding: 50px 50px;                  /* Reduce padding on mobile */
+        padding: 0;                  /* Reduce padding on mobile */
         text-align: center;          /* Center text for better readability */
         width: auto;
         justify-content: center;
