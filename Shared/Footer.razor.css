@@ -23,21 +23,40 @@
 .footer-div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
 }
 
-.footer p {
-  margin: 0;
+.footer-div .socials-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem; /* Space between icons */
 }
 
-.footer a {
-  color: inherit;              /* Use the parent's color */
-  text-decoration: none;       /* Remove underline */
-  transition: color 0.3s ease;
+.footer-div .socials {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* spacing between rows */
 }
 
-.footer a:hover {
-  color: #ccc;                 /* Lighter shade on hover */
+.footer-div .socials .label {
+  width: 100px;           /* fixed width for the label column */
+  text-align: right;      /* align text (and colon) to the right */
+  margin-right: 10px;     /* gap between label and value */
+  font-weight: bold;
+}
+
+.footer-div .socials .value {
+  display: flex;
+  align-items: center;
+  gap: 10px;              /* space between icons or between text & icon */
+  color: black;
+}
+
+.footer-div .socials .value img {
+  height: 50px;           /* or whatever size you prefer for icons */
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Optional: Adjust layout on very small screens */
