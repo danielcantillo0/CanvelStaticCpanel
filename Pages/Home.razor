@@ -3,16 +3,28 @@
 @using CanvelStaticCpanel.Shared
 @layout MainLayout
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 
 <PageTitle>Home</PageTitle>
 
-<div class="hero">
+<div class="hero carousel slide carousel-fade"> 
+	<div class="carousel-inner">
+		<div class="carousel-item  active">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-umaraffan499-87236.jpg?alt=media&token=590eabfd-9969-4ef8-b92b-a7c38285fdbe" class="" alt="...">
+		</div>
+		<div class="carousel-item ">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-jan-reichelt-911302335-31065265.jpg?alt=media&token=9d492028-e99c-437f-8530-6d1d5e48f350" class="" alt="...">
+		</div>
+		<div class="carousel-item ">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-hormel-media-1095814.jpg?alt=media&token=b29d1f93-3577-47db-bd6b-d1fbc9b5a1d4" class="" alt="...">
+		</div>
+	</div>
 	<div class="hero-overlay"></div>
-	<div class="container">
+	<div class="hero-content container">
 		<h1>Impulsamos industrias esenciales con equipos de alta especialización y soluciones integrales</h1>
 		<p>Nuestra experiencia combinada de más de 15 años en el sector respalda el suministro y soporte técnico de equipos críticos y especializados, así como la selección de proveedores confiables y de calidad.</p>
-		<MyButton ButtonText="Contáctanos" ButtonClass="btn-primary" OnClick="@NavigateToContact"  />
+		<MyButton ButtonText="Contáctanos" ButtonClass="btn-primary" OnClick="@NavigateToContact" />
 	</div>
 </div>
 
@@ -53,5 +65,13 @@
 	{
 		// This will navigate to the /contact route
 		NavigationManager.NavigateTo("contacto");
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await JSRuntime.InvokeVoidAsync("startCarousels");
+		}
 	}
 }
