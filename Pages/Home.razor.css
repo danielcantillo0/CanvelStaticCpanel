@@ -14,10 +14,6 @@
 .hero {
     position: relative;
     display: flex;
-/*    background-image: url("https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-hormel-media-1095814.jpg?alt=media&token=b29d1f93-3577-47db-bd6b-d1fbc9b5a1d4");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;*/
     color: white;
     justify-content: center;
     text-align: center;
@@ -108,16 +104,20 @@
 .aliados {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     background-color: white;
-    text-align: center;
-    padding: 25px 10px;
-    color: #007bff;
+    padding: 10px;
+    color: black;
 }
 
 /* Aliados Images Container */
 .aliados-imagenes {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-gryziu-31127378.jpg?alt=media&token=27c181cd-ed08-45d1-8b55-411009fa631f");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -130,13 +130,23 @@
     max-height: 200px;
 }
 
+.connector {
+    display: flex;
+    justify-content: center;
+    
+}
+
 /* Title */
 .titulo {
     font-size: 1.25rem;
     text-align: center;
-    margin: 15px 0;
+    margin: 30px 0px;
     font-weight: 600;
-    color: black;
+    color: white;
+    border-radius: 60px;
+    width: 80vw;
+    padding: 15px;
+    background-color: #007bff;
 }
 
 /* Features Section */
@@ -172,9 +182,7 @@
     }
     
     .aliados-imagenes {      
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: auto;
         gap: 10px;
         align-items: center;
     }

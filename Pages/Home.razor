@@ -11,13 +11,13 @@
 <div class="hero carousel slide carousel-fade"> 
 	<div class="carousel-inner">
 		<div class="carousel-item  active">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-umaraffan499-87236.jpg?alt=media&token=590eabfd-9969-4ef8-b92b-a7c38285fdbe" class="" alt="...">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-umaraffan499-87236.jpg?alt=media&token=590eabfd-9969-4ef8-b92b-a7c38285fdbe" class="" alt="carousel-1">
 		</div>
 		<div class="carousel-item ">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-jan-reichelt-911302335-31065265.jpg?alt=media&token=9d492028-e99c-437f-8530-6d1d5e48f350" class="" alt="...">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-jan-reichelt-911302335-31065265.jpg?alt=media&token=9d492028-e99c-437f-8530-6d1d5e48f350" class="" alt="carousel-3">
 		</div>
 		<div class="carousel-item ">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-hormel-media-1095814.jpg?alt=media&token=b29d1f93-3577-47db-bd6b-d1fbc9b5a1d4" class="" alt="...">
+			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpexels-hormel-media-1095814.jpg?alt=media&token=b29d1f93-3577-47db-bd6b-d1fbc9b5a1d4" class="" alt="carousel-2">
 		</div>
 	</div>
 	<div class="hero-overlay"></div>
@@ -29,33 +29,32 @@
 </div>
 
 
-
-<h1 class="titulo">PRINCIPALES ALIADOS</h1>
-
-
-<div class="aliados">
-	<div class="aliados-imagenes">
-		<a href="https://www.manoilmarine.com/">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2F09jcl_Aliado_manoil.png?alt=media&token=a9f6acd0-515c-4d4c-95be-1cc3b2420bf1" alt="Manoil" />
-		</a>
-		<a href="https://iocs-srl.com/">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fkd2jk_Aliado_iocs.png?alt=media&token=5e72a246-efe9-47e5-9061-9bb35d88760b" alt="Iocs" />
-		</a>
-		<a href="https://www.irmome.com/">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fyylwn_Aliado_irm.png?alt=media&token=b66ea5a6-df67-48e1-bd19-0dca343eeda3" alt="IRM" />
-		</a>
-		<a href="https://constellationengineering.com/">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpjiq3_Aliado_constellation.png?alt=media&token=96140670-0488-4cb6-9fb6-4efae0a59c07" alt="Constellation" />
-		</a>
-		<a href="https://www.marit.fr/en/">
-			<img src="https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fmarit-01.png?alt=media&token=59494d4e-e0c9-419a-9cf0-1d9f21aac569" alt="Marit" />
-		</a>
-	</div>
+<div class="connector">
+	<h1 class="titulo">PRINCIPALES ALIADOS</h1>
 </div>
 
 
 
-<h1 class="titulo">BENEFICIOS Y CARACTERISTICAS</h1>
+<div class="aliados">
+	<div class="aliados-imagenes">
+
+		<AliadoItem Desc=@Irm.Desc Image=@Irm.Image ImageProduct=@Irm.ImageProduct Title=@Irm.Title srcLink=@Irm.SrcLink></AliadoItem>
+
+		<AliadoItem Desc=@Manoil.Desc Image=@Manoil.Image ImageProduct=@Manoil.ImageProduct Title=@Manoil.Title srcLink=@Manoil.SrcLink></AliadoItem>
+
+		<AliadoItem Desc=@Iocs.Desc Image=@Iocs.Image ImageProduct=@Iocs.ImageProduct Title=@Iocs.Title srcLink=@Iocs.SrcLink></AliadoItem>
+
+		<AliadoItem Desc=@Constellation.Desc Image=@Constellation.Image ImageProduct=@Constellation.ImageProduct Title=@Constellation.Title srcLink=@Constellation.SrcLink></AliadoItem>
+
+		<AliadoItem Desc=@Marit.Desc Image=@Marit.Image ImageProduct=@Marit.ImageProduct Title=@Marit.Title srcLink=@Marit.SrcLink></AliadoItem>
+	</div>
+</div>
+
+
+<div class="connector">
+	<h1 class="titulo">BENEFICIOS Y CARACTERISTICAS</h1>
+</div>
+
 <img class="features" src="BottomGraphic.svg" alt="features graph" />
 
 
@@ -74,4 +73,56 @@
 			await JSRuntime.InvokeVoidAsync("startCarousels");
 		}
 	}
+
+	public class Aliado
+	{
+		public string Image { get; set; }
+		public string Title { get; set; }
+		public string ImageProduct { get; set; }
+		public string Desc { get; set; }
+		public string SrcLink { get; set; }
+	}
+
+	Aliado Irm = new Aliado
+		{
+			Image = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fyylwn_Aliado_irm.png?alt=media&token=b66ea5a6-df67-48e1-bd19-0dca343eeda3",
+			Title = "IRM Offshore and Marine Engineers",
+			ImageProduct = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Irm%2Fcone-fenders2.jpg?alt=media&token=d786c388-ea14-45ef-9932-3214d866e6a4",
+			Desc = "Bajo un acuerdo de representación exclusiva con IRM OFFSHORE AND MARINE ENGINEERS, CANVEL suministra una amplia gama de defensas marinas y de defensas para embarcaciones. Además, IRM es pionera en la fabricación de sistemas de protección críticos de plataformas, equipos y sistemas de instalación offshore.",
+			SrcLink = "https://www.irmome.com/products.php"
+		};
+
+	Aliado Manoil = new Aliado
+		{
+			Image = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2F09jcl_Aliado_manoil.png?alt=media&token=a9f6acd0-515c-4d4c-95be-1cc3b2420bf1",
+			Title = "Man Oil and Marine",
+			ImageProduct = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Irm%2FMarine-Hose-Steel-cord-Reinforced_02.jpg?alt=media&token=2f7fd0ec-18bf-4925-b81f-a925d48308d0",
+			Desc = "Bajo un acuerdo de representación exclusiva con MAN Oil & Marine en Colombia, CANVEL suministra una amplia gama de mangueras de descarga que cumplen con los estándares GMPHOM 2009. MAN Oil & Marine se especializa en el diseño, fabricación y comercialización de compuestos de caucho, películas calandradas y mangueras para el transporte de productos petroleros, químicos y gases licuados para instalaciones en tierra y marítimas.",
+			SrcLink = "https://www.manoilmarine.com/products.html"
+		};
+	Aliado Iocs = new Aliado
+		{
+			Image = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fkd2jk_Aliado_iocs.png?alt=media&token=5e72a246-efe9-47e5-9061-9bb35d88760b",
+			Title = "IOCS SRL",
+			ImageProduct = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Assets%2FV%C3%A1lvulas.png?alt=media&token=de679535-1879-4bed-8a06-78f1e9996150",
+			Desc = "Como distribuidores autorizados de IOCS SRL en Colombia (no exclusivo), ofrecemos el soporte local necesario para el suministro de productos y accesorios para la industria de petróleo y gas. IOCS S.r.L. se compromete a brindar un valor sostenible a sus clientes, centrándose en la excelencia al proporcionar productos de primera calidad, innovación y servicios.",
+			SrcLink = "https://iocs-srl.com/products/"
+		};
+	Aliado Constellation = new Aliado
+		{
+			Image = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fpjiq3_Aliado_constellation.png?alt=media&token=96140670-0488-4cb6-9fb6-4efae0a59c07",
+			Title = "Constellation Engineering",
+			ImageProduct = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Assets%2FBoyas.png?alt=media&token=b10af6e2-60a0-4482-a452-75e797d4c2e6",
+			Desc = "Como distribuidores autorizados de Constellation Engineering (no exclusivo), ofrecemos su amplia gama de productos y servicios de alta calidad. Desde la fabricación de productos duraderos compatibles con mangueras marinas OCIMF hasta la realización de pruebas, mantenimiento y capacitación en el lugar por parte de ingenieros calificados, Constellation Engineering se compromete con la excelencia.",
+			SrcLink = "https://constellationengineering.com/equipment/"
+		};
+
+	Aliado Marit = new Aliado
+		{
+			Image = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Home%2Fmarit-01.png?alt=media&token=59494d4e-e0c9-419a-9cf0-1d9f21aac569",
+			Title = "Marit",
+			ImageProduct = "https://firebasestorage.googleapis.com/v0/b/canvel-b3103.appspot.com/o/Irm%2Fchaines_galvanisees.jpg?alt=media&token=8f3f0bbe-f362-4c2a-b79b-0abccd65cb4c",
+			Desc = "Durante más de 110 años, la empresa MARIT ha fabricado y suministrado cadenas de acero de alta resistencia y accesorios para aplicaciones tales como offshore, marina militar, marítima y portuaria. Gracias a su amplia experiencia, MARIT distribuye sus productos en Francia y a nivel mundial.",
+			SrcLink = "https://www.marit.fr/en/products/"
+		};
 }

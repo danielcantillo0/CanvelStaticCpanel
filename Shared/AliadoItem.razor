@@ -1,0 +1,20 @@
+﻿<div class="aliado-item container">
+	<img src="@Image" alt="Aliado" />
+	<span> @Title </span>
+	<img src="@ImageProduct" alt="Producto detacado" />
+	<span>Producto destacado </span>
+	<p> @Desc </p> <a href="@srcLink">Ver más</a>
+</div>
+
+@code {
+	[Parameter]
+	public string? Image { get; set; }
+	[Parameter]
+	public string? Desc { get; set; }
+	[Parameter]
+	public string? ImageProduct { get; set; }
+	[Parameter]
+	public string? srcLink { get; set; }
+	[Parameter]
+	public string? Title { get; set; }
+}
